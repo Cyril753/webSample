@@ -8,3 +8,7 @@ body{
     height: 2000px;
     background-color: rgba(148, 132, 132, 0.527);
 }
+
+header{
+    background-color: rgba(41, 39, 39, 0.863);
+}

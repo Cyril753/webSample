@@ -6,6 +6,9 @@
     <title>web sample</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/ui.css">
+    <script type="text/javascript" src="./js/jquery.js"></script>
+    
 </head>
 <body>
     
@@ -20,7 +23,16 @@
         <div class="wrap clearfix">
             <a href="#" class="logo"><img src="./img/logo.png" alt=""></a>
 
-            <div class="search"></div>
+            <div class="search ui-search">
+                <div class="ui-search-selected">医院</div>
+                <div class="ui-search-select-list">
+                    <a href="#1">科室</a>
+                    <a href="#1">疾病</a>
+                    <a href="#1">医院</a>
+                </div>
+                <input type="text" name="search-content" class="ui-search-input" placeholder="the text for search">
+                <a href="#" class="ui-search-submit">&nbsp;</a>
+            </div>
         </div>
         
     </div>
@@ -156,6 +168,6 @@
     <div class="footer" id="footer">
         copyright
     </div>
-    
+    <script type="text/javascript" src="./js/ui.js"></script>
 </body>
 </html>

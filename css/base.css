@@ -51,7 +51,7 @@ select, input{
     position: absolute;
     right: 0px;
     top: 29px;
-    background-color: orange;
+    /* background-color: orange; */
 }
 
 .nav .link{

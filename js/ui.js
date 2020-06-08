@@ -16,6 +16,24 @@ $.fn.UiSearch = function(){
     })
 }
 
+$.fn.UiTab = function(header, content, focus_prefix){
+    var ui = $(this);
+    var tabs = $(header, ui);
+    var cons = $(content, ui);
+    var focus_prefix = focus_prefix || '';
+
+    tabs.on('click', function(){
+        var index = $(this).index();
+        tabs.removeClass(focus_prefix + 'item_focus').eq(index).addClass(focus_prefix + 'item_focus');
+        cons.hide().eq(index).show();
+
+        return false;
+    })
+}
+
 $(function(){
     $('.ui-search').UiSearch();
+
+    $('.content-tab').UiTab('.caption > .item','.block > .item');
+    $('.content-tab .block .item').UiTab('.block-caption > a','.block-content > .block-wrap', 'block-caption-');
 });

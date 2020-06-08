@@ -31,9 +31,33 @@ $.fn.UiTab = function(header, content, focus_prefix){
     })
 }
 
+//back-top
+
+$.fn.UiBackTop = function(){
+    var ui = $(this);
+    var el = $('<a class="ui-backTop" href="0"></a>');
+    ui.append(el);
+
+    var windowHeight = $(window).height();
+    $(window).on('scroll',function(){
+        var top = $('body').scrollTop();
+        if(top > windowHeight){
+            el.show();
+
+        }else{
+            el.hide();
+        }
+    });
+    el.on('click',function(){
+        $(window).scrollTop(0);
+    });
+
+}
+
 $(function(){
     $('.ui-search').UiSearch();
 
     $('.content-tab').UiTab('.caption > .item','.block > .item');
     $('.content-tab .block .item').UiTab('.block-caption > a','.block-content > .block-wrap', 'block-caption-');
+    $('body').UiBackTop();
 });
